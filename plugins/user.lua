@@ -8,7 +8,10 @@ return {
   --   config = function()
   --     require("lsp_signature").setup()
   --   end,
-   {
+  { -- learn vim-movements
+    'ThePrimeagen/vim-be-good',
+  },
+  {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
