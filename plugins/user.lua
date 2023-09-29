@@ -10,7 +10,13 @@ return {
   --   end,
   { -- learn vim-movements
     'ThePrimeagen/vim-be-good',
+    event = "VeryLazy"
   },
+  -- { -- indentations
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   main = "ibl",
+  --   opts = {}
+  -- },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -27,8 +33,18 @@ return {
   { -- scientific annotation
     'jbyuki/nabla.nvim',
   },
+  {
+    'ahmedkhalf/project.nvim',
+    config = function()
+      require("project_nvim").setup {
+
+      }
+    end,
+    event = "VeryLazy",
+  },
   { -- tagbar
-    'majutsushi/tagbar'
+    'majutsushi/tagbar',
+    event = "VimEnter"
   },
   {
     'jose-elias-alvarez/null-ls.nvim',
