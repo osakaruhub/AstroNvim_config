@@ -8,6 +8,23 @@ return {
   --   config = function()
   --     require("lsp_signature").setup()
   --   end,
+  {
+    "Zeioth/compiler.nvim",
+    cmd = {"CompilerOpen", "CompilerToggleResults", "CompilerRedo"},
+    dependencies = { "stevearc/overseer.nvim" },
+    opts = {},
+  },
+  {
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+    keys = { { "<leader>lc", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+    config = true,
+  },
+  -- {
+  --   "SmiteshP/nvim-navic",
+  --   dependencies = { "neovim/nvim-lspconfig" },
+  --   require("neoconf").setup()
+  -- },
   { -- learn vim-movements
     'ThePrimeagen/vim-be-good',
     event = "VeryLazy"
@@ -25,13 +42,10 @@ return {
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     },
-    cmd = {"TodoQuickFix"},
+    cmd = { "TodoQuickFix" },
     keys = {
-      { "<Leader>T", "<cmd>TodoTelescope<cr>", desc = "Open TODOs in Telescope"},
+      { "<Leader>T", "<cmd>TodoTelescope<cr>", desc = "Open TODOs in Telescope" },
     },
-  },
-  { -- scientific annotation
-    'jbyuki/nabla.nvim',
   },
   {
     'ahmedkhalf/project.nvim',
@@ -70,20 +84,38 @@ return {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
+  { -- compiler
+    "Zeioth/compiler.nvim",
+    cmd = {"CompilerOpen", "CompilerToggleResults", "CompilerRedo"},
+    dependencies = { "stevearc/overseer.nvim" },
+    opts = {},
+  },
+  { -- task runner
+    "stevearc/overseer.nvim",
+    commit = "400e762648b70397d0d315e5acaf0ff3597f2d8b",
+    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+    opts = {
+      task_list = {
+        direction = "bottom",
+        min_height = 25,
+        max_height = 25,
+        default_detail = 1
+      },
     },
   },
   { -- discord Rich-Presence
     'andweeb/presence.nvim',
     opts = {},
-    event = "VeryLazy",
+    event = 'VimEnter',
   },
-  { -- learn neovim  
-     "m4xshen/hardtime.nvim",
-     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-     opts = {}
+  { -- learn neovim
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {}
   },
-  -- },
 }

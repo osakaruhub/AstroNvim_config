@@ -18,7 +18,12 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "tokyonight",
+  -- colors: tokyonight,
+  --         gruvbox,
+  --         nord,
+  --         monokai-pro,
+  --         nightfox themes,
+  colorscheme = "duskfox",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
