@@ -9,12 +9,6 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   {
-    "Zeioth/compiler.nvim",
-    cmd = {"CompilerOpen", "CompilerToggleResults", "CompilerRedo"},
-    dependencies = { "stevearc/overseer.nvim" },
-    opts = {},
-  },
-  {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
     keys = { { "<leader>lc", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
@@ -74,11 +68,10 @@ return {
     end,
   },
   { -- screensaver
-    "folke/drop.nvim",
-    event = "VimEnter",
+    "tamton-aquib/zone.nvim",
     config = function()
-      require("drop").setup()
-    end
+      require("zone").setup()
+    end,
   },
   {
     "folke/trouble.nvim",
