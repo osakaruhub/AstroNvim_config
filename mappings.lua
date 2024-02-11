@@ -20,19 +20,20 @@ return {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
-    -- Bind the function to a key mapping
-    -- -- Open compiler
-    -- vim.api.nvim_set_keymap('n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true }),
-    --
-    -- -- Redo last selected option
-    -- vim.api.nvim_set_keymap('n', '<S-F6>',
-    --      "<cmd>CompilerStop<cr>" -- (Optional, to dispose all tasks before redo)
-    --   .. "<cmd>CompilerRedo<cr>",
-    --  { noremap = true, silent = true }),
-    --
-    -- -- Toggle compiler results
-    -- vim.api.nvim_set_keymap('n', '<S-F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true }),
-    --
+    ['<F6>'] = {
+      "<cmd>CompilerOpen<cr>",
+      desc = "Open compiler"
+    },
+    ['<S-F6>'] = {
+          "<cmd>CompilerStop<cr>" -- (Optional, to dispose all tasks before redo)
+       .. "<cmd>CompilerRedo<cr>",
+      desc = "Redo last compiler option"
+    },
+    ['<S-F7>'] = {
+      "<cmd>CompilerToggleResults<cr>",
+      desc = "toggle Compiler results"
+    },
+
     ["<leader>r"] = {
       ":cd %:h<cr>", desc = "CD to current file"
     },

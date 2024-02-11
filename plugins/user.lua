@@ -52,7 +52,7 @@ return {
   },
   { -- tagbar
     'majutsushi/tagbar',
-    event = "VimEnter"
+    event = "VimEnter",
   },
   {
     'jose-elias-alvarez/null-ls.nvim',
@@ -61,16 +61,27 @@ return {
   { -- nvim-jdtls
     'mfussenegger/nvim-jdtls',
   },
+  { -- transparent.nvim
+    'xiyaowong/transparent.nvim',
+    config = function()
+      require("transparent").setup({ -- Optional, you don't have to run setup.
+        groups = { -- table: default groups
+          'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+          'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+          'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+          'SignColumn', 'CursorLine', 'CursorLineNr', 'StatusLine', 'StatusLineNC',
+          'EndOfBuffer',
+        },
+        extra_groups = { 'NvimTreeNormal', }, -- table: additional groups that should be cleared
+        exclude_groups = { 'NormalFloat', }, -- table: groups you don't want to clear
+      })
+    end,
+    event = "VimEnter",
+  },
   { -- feline (statusbar)
     'feline-nvim/feline.nvim',
     config = function()
       require('feline').setup()
-    end,
-  },
-  { -- screensaver
-    "tamton-aquib/zone.nvim",
-    config = function()
-      require("zone").setup()
     end,
   },
   {
@@ -83,7 +94,7 @@ return {
     },
   },
   { -- compiler
-    "Zeioth/compiler.nvim",
+    "osakaruhub/compiler.nvim",
     cmd = {"CompilerOpen", "CompilerToggleResults", "CompilerRedo"},
     dependencies = { "stevearc/overseer.nvim" },
     opts = {},
@@ -100,11 +111,6 @@ return {
         default_detail = 1
       },
     },
-  },
-  { -- discord Rich-Presence
-    'andweeb/presence.nvim',
-    opts = {},
-    event = 'VimEnter',
   },
   { -- learn neovim
     "m4xshen/hardtime.nvim",
