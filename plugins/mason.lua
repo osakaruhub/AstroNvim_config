@@ -10,10 +10,10 @@ return {
         "bashls",
         "lua_ls",
         "jdtls",
+        "java_language_server",
         "rust_analyzer",
         "tsserver",
         "sqlls",
-        "biome",
       })
     end,
   },
@@ -26,6 +26,9 @@ return {
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
         "prettierd",
         -- "stylua",
+        "sql-formatter",
+        "sqlfluff",
+        "biome",
       })
     end,
   },

@@ -58,6 +58,35 @@ return {
     'jose-elias-alvarez/null-ls.nvim',
     dependencies = { "nvim-lua/plenary.nvim" }
   },
+  { -- Database
+    'tpope/vim-dadbod',
+    dependencies = {
+      "kristijanhusak/vim-dadbod-ui",
+      "kristijanhusak/vim-dadbod-completion",
+      --[[ "abenz1267/nvim-databasehelper", ]]
+    },
+    config = function()
+      require("config.dadbod").setup()
+    end,
+    cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
+  },
+  {
+    'nanotee/sqls.nvim',
+    module = { "sqls" },
+    cmd = {
+      "SqlsExecuteQuery",
+      "SqlsExecuteQueryVertical",
+      "SqlsShowDatabases",
+      "SqlsShowSchemas",
+      "SqlsShowConnections",
+      "SqlsSwitchDatabase",
+      "SqlsSwitchConnection",
+    },
+  },
+  {
+    'dinhhuy258/vim-database',
+    cmd = { "VDToggleDatabase", "VDToggleQuery", "VimDatabaseListTablesFzf" },
+  },
   { -- nvim-jdtls
     'mfussenegger/nvim-jdtls',
   },

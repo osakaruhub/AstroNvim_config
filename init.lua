@@ -23,7 +23,7 @@ return {
   --         nord,
   --         monokai-pro,
   --         nightfox themes,
-  colorscheme = "duskfox",
+  colorscheme = "gruvbox",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -74,6 +74,11 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    require('lspconfig').sqls.setup{
+      on_attach = function(client, bufnr)
+        require('sqls').on_attach(client, bufnr)
+      end
+    }
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
