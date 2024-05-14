@@ -23,7 +23,7 @@ return {
   --         nord,
   --         monokai-pro,
   --         nightfox themes,
-  colorscheme = "gruvbox",
+  colorscheme = "tokyonight",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -41,7 +41,7 @@ return {
           -- "go",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
-          "sql"
+          -- "sql"
           -- "python",
         },
       },

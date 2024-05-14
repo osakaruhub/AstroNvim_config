@@ -23,11 +23,6 @@ return {
     'ThePrimeagen/vim-be-good',
     event = "VeryLazy"
   },
-  -- { -- indentations
-  --   'lukas-reineke/indent-blankline.nvim',
-  --   main = "ibl",
-  --   opts = {}
-  -- },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -41,7 +36,7 @@ return {
       { "<Leader>T", "<cmd>TodoTelescope<cr>", desc = "Open TODOs in Telescope" },
     },
   },
-  {
+  { -- project management
     'ahmedkhalf/project.nvim',
     config = function()
       require("project_nvim").setup {
@@ -83,13 +78,6 @@ return {
       "SqlsSwitchConnection",
     },
   },
-  {
-    'dinhhuy258/vim-database',
-    cmd = { "VDToggleDatabase", "VDToggleQuery", "VimDatabaseListTablesFzf" },
-  },
-  { -- nvim-jdtls
-    'mfussenegger/nvim-jdtls',
-  },
   { -- transparent.nvim
     'xiyaowong/transparent.nvim',
     config = function()
@@ -123,7 +111,7 @@ return {
     },
   },
   { -- compiler
-    "osakaruhub/compiler.nvim",
+    "zeioth/compiler.nvim",
     cmd = {"CompilerOpen", "CompilerToggleResults", "CompilerRedo"},
     dependencies = { "stevearc/overseer.nvim" },
     opts = {},
@@ -141,9 +129,9 @@ return {
       },
     },
   },
-  { -- learn neovim
-    "m4xshen/hardtime.nvim",
-    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    opts = {}
-  },
+  -- { -- learn neovim
+  --   "m4xshen/hardtime.nvim",
+  --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+  --   opts = {}
+  -- },
 }

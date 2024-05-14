@@ -20,6 +20,14 @@ return {
       return opts
     end,
   },
+  {
+  "AstroNvim/astrocore",
+    lazy = false, -- disable lazy loading
+    priority = 10000, -- load AstroCore first
+    opts = {
+      -- set configuration options  as described below
+    }
+  },
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },
   --

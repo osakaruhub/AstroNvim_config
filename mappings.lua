@@ -20,6 +20,9 @@ return {
       function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
       desc = "Previous buffer",
     },
+    ["<leader>fp"] = {
+      ":Telescope projects<cr>", desc = "find projects"
+    },
     ['<F6>'] = {
       "<cmd>CompilerOpen<cr>",
       desc = "Open compiler"
