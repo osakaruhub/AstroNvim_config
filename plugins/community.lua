@@ -11,5 +11,6 @@ return {
   { import = "astrocommunity.colorscheme.nightfox-nvim"},
 
   -- languages
-  { import = "astrocommunity.pack.java" }
+  { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.rust" }
 }

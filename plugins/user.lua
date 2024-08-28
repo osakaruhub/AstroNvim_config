@@ -49,10 +49,6 @@ return {
     'majutsushi/tagbar',
     event = "VimEnter",
   },
-  {
-    'jose-elias-alvarez/null-ls.nvim',
-    dependencies = { "nvim-lua/plenary.nvim" }
-  },
   { -- Database
     'tpope/vim-dadbod',
     dependencies = {
@@ -64,6 +60,18 @@ return {
       require("config.dadbod").setup()
     end,
     cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+        "neovim/nvim-lspconfig",
+        "mfussenegger/nvim-dap",
+      "simrat39/rust-tools.nvim",
+    },
+    config = function()
+      require("rustaceanvim").setup()
+    end,
   },
   {
     'nanotee/sqls.nvim',
@@ -100,6 +108,11 @@ return {
     config = function()
       require('feline').setup()
     end,
+  },
+  { -- render diagrams in real time
+    'https://gitlab.com/itaranto/plantuml.nvim',
+    version = '*',
+    config = function() require('plantuml').setup() end,
   },
   {
     "folke/trouble.nvim",
